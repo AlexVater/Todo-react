@@ -1,9 +1,7 @@
-import {Button, ListGroup} from "react-bootstrap";
-import {useState} from "react";
+import React from "react";
+import {ListGroup} from "react-bootstrap";
 
 const List = props => {
-    const [task, setTask] = useState([props.tasks])
-    console.log(task)
 
     return(
         <ListGroup variant="flush">

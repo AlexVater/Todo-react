@@ -1,12 +1,19 @@
 import './App.css';
-import Main from "../components/Main";
+import FormTask from "../components/FormTask";
+import {useState} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <Main title="Botão"/>
-    </div>
-  );
+    const [inputText, setInputText] = useState("")
+    const [todos, setTodos] = useState([])
+    return (
+        <div className="App">
+            <FormTask todos={todos}
+                      setTodos={setTodos}
+                      inputText={inputText}
+                      setInputText={setInputText}
+            />
+        </div>
+    );
 }
 
 export default App;
