@@ -1,13 +1,14 @@
 import React from "react";
 import {ListGroup} from "react-bootstrap";
+import Tasks from "./Tasks";
 
-const List = props => {
-
+const List = ({todos}) => {
     return(
         <ListGroup variant="flush">
-            <ListGroup.Item variant="secondary">s</ListGroup.Item>
+            {todos.map((todo, key) => (
+                <Tasks key={key} text={todo.text}/>
+            ))}
         </ListGroup>
-
     )
 }
 

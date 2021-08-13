@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import {Button, Card, Col, Container, Form, Row} from "react-bootstrap";
+import List from "./List";
 
-const FormTask = ({inputText, setInputText, todos, setTodos}) => {
+const FormTask = () => {
+    const [inputText, setInputText] = useState("")
+    const [todos, setTodos] = useState([])
 
     const inputTextHandler = (text) => {
         setInputText(text)
@@ -34,7 +37,6 @@ const FormTask = ({inputText, setInputText, todos, setTodos}) => {
                                                 <Form.Label>Adicionar Todo</Form.Label>
                                                 <Form.Control type="text" value={inputText} onChange={e => inputTextHandler(e.target.value)}/>
                                             </Form.Group>
-
                                             <Button variant="dark" type="submit" onClick={submitTodoHandler}>
                                                 Adicionar
                                             </Button>
@@ -43,7 +45,8 @@ const FormTask = ({inputText, setInputText, todos, setTodos}) => {
                                 </Col>
                             </Row>
                             <Row>
-                                <div className="mt-5 d-flex justify-content-center">
+                                <div className="mt-5 px-5">
+                                    <List todos={todos}/>
                                 </div>
                             </Row>
                         </Card.Body>
